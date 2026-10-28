@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Run Script') {
             steps {
-                sh 'bash hello.sh'
+                sh 'echo "Hello from my repo. Build number: $BUILD_NUMBER" '
             }
         }
     }
