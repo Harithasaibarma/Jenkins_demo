@@ -6,16 +6,15 @@ pipeline {
                 checkout scm
             }
         }
-        stage('Show Files') {
+        stage('Test') {
             steps {
-                sh 'ls -la'
+                sh 'python3 test_app.py'
             }
         }
-        stage('Run Script') {
+        stage('Deploy') {
             steps {
-                sh 'echo "Hello from my repo. Build number: $BUILD_NUMBER" '
+                echo 'Deploying the app...'
             }
         }
     }
 }
-
